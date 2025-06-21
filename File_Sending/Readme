@@ -1,0 +1,46 @@
+# 📁 Python File Transfer using Sockets (TCP)
+
+This project demonstrates how to transfer files between a **client** and a **server** using **Python's `socket` module** over a **TCP connection**.
+'''
+---
+
+## 🚀 How It Works
+
+This system includes two Python scripts:
+
+- `file_server.py` – waits for incoming file from a client.
+- `file_client.py` – sends a file to the server.
+
+The connection is established using **TCP** (Transmission Control Protocol), which ensures:
+- Reliable delivery
+- Ordered data
+- No data duplication
+
+---
+
+## 🧠 Why TCP?
+
+TCP is ideal for file transfers because it:
+- Guarantees the file is received without loss or corruption
+- Automatically handles packet order and retransmission
+
+---
+
+## 🛠️ How to Run
+### ⚠️ Important Note
+
+> ✅ You **must run the server and client in separate terminals**:
+
+- 🖥️ Open one terminal for `file_server.py`
+- 🖥️ Open another terminal for `file_client.py`
+
+Use PowerShell or Terminal on your system.
+
+### 1️⃣ Start the Server
+
+In PowerShell or Terminal:
+bash
+```python file_server.py
+
+bash
+```python file_client.py
