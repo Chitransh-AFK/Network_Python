@@ -1,6 +1,7 @@
 # 📁 Python File Transfer using Sockets (TCP)
 
-This project demonstrates how to transfer files between a **client** and a **server** using **Python's `socket` module** over a **TCP connection**.
+This project demonstrates how to transfer files between a **client** and a **server** 
+using **Python's `socket` module** over a **TCP connection**.
 '''
 ---
 
@@ -44,3 +45,7 @@ bash
 
 bash
 ```python file_client.py
+
+## 🤝 Author
+
+Made by **Laksh** with ❤️ to learn networking and threading in Python.
