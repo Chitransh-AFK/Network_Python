@@ -1,0 +1,46 @@
+# 📡 TCP vs UDP – Understanding the Difference
+
+When working with computer networks, it's crucial to understand the two main transport layer protocols: 
+**TCP (Transmission Control Protocol)** and **UDP (User Datagram Protocol)**. Both serve different purposes
+depending on the application's needs for reliability, speed, and efficiency.
+
+---
+
+## 🔍 Key Differences
+
+| Feature                    | TCP                                       | UDP                                       |
+|---------------------------|--------------------------------------------|-------------------------------------------|
+| **Connection Type**       | Connection-oriented                        | Connectionless                            |
+| **Reliability**           | Reliable – guarantees delivery and order   | Unreliable – no guarantee of delivery     |
+| **Data Integrity**        | Error checking, correction, retransmission | Error checking only (no correction)       |
+| **Speed**                 | Slower due to overhead                     | Faster due to minimal overhead            |
+| **Ordering**              | Maintains order of packets                 | No order guarantee                        |
+| **Use Case**              | Web browsing, email, file transfer         | Streaming, gaming, VoIP                   |
+| **Header Size**           | 20-60 bytes                                | 8 bytes                                   |
+| **Flow Control**          | Yes                                        | No                                        |
+| **Congestion Control**    | Yes                                        | No                                        |
+
+---
+
+## 🔧 When to Use TCP?
+
+- Applications where **reliability and order** matter.
+- Examples:
+  - HTTP/HTTPS (Web)
+  - FTP (File Transfer)
+  - SMTP/IMAP (Email)
+
+## 🚀 When to Use UDP?
+
+- Applications needing **low latency** and can tolerate loss.
+- Examples:
+  - Live video/audio streaming
+  - Online gaming
+  - DNS queries
+
+---
+
+## 🎯 Summary
+
+- Use **TCP** when you need **accuracy, order, and reliability**.
+- Use **UDP** when you prioritize **speed and efficiency** over guaranteed delivery.
