@@ -1,0 +1,78 @@
+# 🧵 Python Chat Application Using Socket and Threading
+
+This is a basic **multi-client chat application** built using Pythons `socket` and `threading` modules. 
+The project demonstrates how a single server can handle multiple client connections using threads.
+
+---
+
+## 🖥️ How to Run
+
+> ⚠️ **IMPORTANT NOTE:**  
+> Open **3 separate PowerShell terminals** on your computer:
+>
+> 1. **Run the server in one terminal**:
+>    ```bash
+>    python chat_server.py
+>    ```
+>
+> 2. **Run the client in two other terminals (separately)**:
+>    ```bash
+>    python chat_client.py
+>    ```
+>
+> Each client terminal will simulate a different user. Type messages and they will appear on the other client’s window.
+
+---
+
+## 📚 How It Works
+
+### 🔗 Server
+- Listens for incoming client connections.
+- For each client, it spawns a **new thread** to handle communication.
+- Broadcasts received messages to **all other connected clients**.
+
+### 💬 Client
+- Starts **two threads**:
+  - One for receiving messages (`receive()` function).
+  - One for sending messages (`send()` function).
+- This allows the client to send and receive messages **simultaneously**.
+
+---
+
+## 🧵 Understanding Threads
+
+**Threading** lets a program do **multiple things at once**.  
+In this app:
+
+- Each client runs its own **independent thread** on the server.
+- Each client itself runs **2 threads**: one for sending and one for receiving.
+
+This keeps the chat app responsive — clients can keep chatting while the server handles other users.
+
+---
+
+### ❗ Don't confuse these threads with CPU "cores" or hardware threads!
+
+These are **Python software threads**, used for **multitasking** in the same program — they are NOT related to your CPU’s hardware threads.
+
+---
+
+## ✅ Features
+
+- Multiple clients can connect to the same server.
+- Each user can set a username.
+- Server broadcasts messages to everyone (except the sender).
+- Clients are handled concurrently using 'threading'.
+
+---
+
+## 🚀 Coming Next (Ideas to Improve)
+
+- Save chat logs to a file
+- And some Bug
+
+---
+
+## 🤝 Author
+
+Made by **Laksh** with ❤️ to learn networking and threading in Python.
