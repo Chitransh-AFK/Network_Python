@@ -8,7 +8,7 @@ depending on the application's needs for reliability, speed, and efficiency.
 
 ## 🔍 Key Differences
 
-| Feature                    | TCP                                       | UDP                                       |
+| Feature                   | TCP                                        | UDP                                       |
 |---------------------------|--------------------------------------------|-------------------------------------------|
 | **Connection Type**       | Connection-oriented                        | Connectionless                            |
 | **Reliability**           | Reliable – guarantees delivery and order   | Unreliable – no guarantee of delivery     |
