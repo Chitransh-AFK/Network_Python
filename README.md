@@ -34,4 +34,7 @@ This is strictly for **educational and ethical** hacking/networking purposes. An
 - Wireshark
 - Linux terminal
 - Git + GitHub
+  
+## 🤝 Author
 
+Made by **Chitransh-AFK** with ❤️ to learn networking in Python.
