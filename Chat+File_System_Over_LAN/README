@@ -86,3 +86,7 @@ Client1       Client2
         Server (PC2)
            |
        Accepts TCP on port 12345
+
+## 🤝 Author
+
+Made by **Chitransh-AFK** with ❤️ to learn networking and threading in Python.
