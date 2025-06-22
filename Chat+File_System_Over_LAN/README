@@ -1,0 +1,88 @@
+# 🖧 Python LAN Chat & File Transfer App
+
+This is a multithreaded client-server application built using Pythons `socket` and `threading` modules. 
+It enables multiple devices on the **same Wi-Fi network** to chat and send files through a central server.
+
+---
+
+## 📡 How It Works
+
+### ⚙️ Network Setup
+
+- All devices (PC1, PC2, PC3, etc.) are connected to the **same Wi-Fi router**.
+- One PC (e.g., PC2) runs the **`server.py`** script — it acts as the central relay.
+- Other PCs (e.g., PC1 & PC3) run **`client.py`** and connect to the server via its **local IP address** 
+  (e.g., `192.168.1.100`<= this is the ip address assigned by the wifi to the pc2(server) ).
+- Communication happens over **TCP (Transmission Control Protocol)** on port `12345`.
+
+---
+
+## 🧠 How the Server Works (`server.py`)
+
+1. **Starts TCP socket server**
+   - Binds to `0.0.0.0:12345` (all local interfaces).
+   - Listens for incoming client connections.
+
+2. **Accepts client connections**
+   - For each new client, it spawns a thread using `handle_client()`.
+
+3. **Inside `handle_client()`**
+   - Asks for a `USERNAME` and stores it.
+   - Listens for incoming messages or files.
+   - If a message starts with:
+     - `MSG:` → it’s a chat message. Broadcast it to all clients.
+     - `FILE:` → it’s a file transfer. It receives the file, then forwards it to all other clients.
+
+4. **Broadcasting**
+   - All chat messages and files are relayed **only by the server**.
+   - Clients never talk directly to each other.
+
+---
+
+## 💬 How the Client Works (`client.py`)
+
+1. **Connects to Server**
+   - Takes the server’s IP (`192.168.1.100`) and connects on port `12345`.
+
+2. **Sends Username**
+   - When the server requests, the client sends its username.
+
+3. **Starts Two Threads**
+   - One thread to **send** messages/files (`send_handler()`).
+   - Another to **receive** messages/files (`receive_handler()`).
+
+4. **Chatting**
+   - Type any message and it gets sent as `MSG:<message>`.
+   - The server rebroadcasts it to all other connected clients.
+
+5. **Sending Files**
+   - Type `/file filename.txt` to send a file.
+   - Client reads the file, sends `FILE:<filename>:<filesize>` followed by binary content.
+   - Server forwards it to everyone else.
+
+6. **Receiving Files**
+   - Client checks if incoming data starts with `FILE:` and writes it to a new file (prefixed with `received_`).
+
+---
+
+## 🛜 How Wi-Fi Is Involved
+
+- Wi-Fi acts as the **Local Area Network (LAN)** medium.
+- All devices must be connected to the **same Wi-Fi router** (same subnet).
+- Data is transferred over TCP/IP through the router, not the internet.
+- Server uses `0.0.0.0` to accept connections from any IP on the LAN.
+- Clients use the server's **local IP address** (like `192.168.1.100`) to connect over Wi-Fi.
+
+---
+
+## 📈 Network-Level Flow
+
+Client1       Client2
+   \             /
+    \           /
+     \         /
+     [ Wi-Fi Router ]
+           |
+        Server (PC2)
+           |
+       Accepts TCP on port 12345
