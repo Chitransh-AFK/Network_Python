@@ -2,7 +2,7 @@ import socket
 import threading
 import os
 
-host='192.168.31.98'
+host='192.168.31.98'#<=here put the ipv4 of your pc which is acting as the server which should be connected to wifi with others
 port=12345
 client=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 client.connect((host,port))
