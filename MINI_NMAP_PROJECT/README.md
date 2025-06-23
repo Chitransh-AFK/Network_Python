@@ -1,4 +1,4 @@
-# 🛰️ Python Network Tools – Mini Projects by Chitransh_AFK
+# 🛰️ Python Network Tools – Mini Projects by Chitransh-AFK
 
 This repo contains **three essential Python scripts** for learning real-world **network scanning**, **ping sweeping**, and **port discovery**. These tools are inspired by concepts behind **Nmap**, and offer a great start for ethical hacking or cybersecurity exploration.
 
